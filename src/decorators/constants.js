@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.QUERY_OPTIONS_KEY = exports.KEY_SET_KEY = exports.CUSTOM_AUTHORIZER_KEY = exports.AUTHORIZER_KEY = exports.REFERENCE_KEY = exports.RELATION_KEY = exports.ID_FIELD_KEY = exports.FILTERABLE_FIELD_KEY = void 0;
+exports.FILTERABLE_FIELD_KEY = 'mongodb-query:filterable-field';
+exports.ID_FIELD_KEY = 'mongodb-query:id-field';
+exports.RELATION_KEY = 'mongodb-query:relation';
+exports.REFERENCE_KEY = 'mongodb-query:reference';
+exports.AUTHORIZER_KEY = 'mongodb-query:authorizer';
+exports.CUSTOM_AUTHORIZER_KEY = 'mongodb-query:custom-authorizer';
+exports.KEY_SET_KEY = 'mongodb-query:key-set';
+exports.QUERY_OPTIONS_KEY = 'mongodb-query:query-options';

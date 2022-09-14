@@ -1,0 +1,76 @@
+{
+  "name": "@senrok/mongo-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Weny Xu",
+  "license": "MIT",
+  "repository": "git@github.com:senrok/mongo-graphql.git",
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "format": "prettier \"src/**/*.ts\" --write",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "precommit": "lint-staged",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
+    "prerelease": "npm run build",
+    "release": "release-it",
+    "test:e2e": "jest --config ./tests/jest-e2e.json --runInBand",
+    "test:e2e:dev": "jest --config ./tests/jest-e2e.json --runInBand --watch"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-angular": "17.1.0",
+    "@nestjs/common": "9.0.11",
+    "@nestjs/core": "9.0.11",
+    "@nestjs/graphql": "^10.1.1",
+    "@nestjs/platform-express": "9.0.11",
+    "@nestjs/testing": "9.0.11",
+    "@types/jest": "29.0.2",
+    "@types/node": "16.11.59",
+    "@typescript-eslint/eslint-plugin": "5.37.0",
+    "@typescript-eslint/parser": "5.37.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "eslint": "8.23.1",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "graphql": "^16.6.0",
+    "graphql-scalars": "^1.18.0",
+    "graphql-type-json": "^0.3.2",
+    "husky": "8.0.1",
+    "jest": "29.0.3",
+    "lint-staged": "13.0.3",
+    "lower-case-first": "^2.0.2",
+    "mongodb": "^4.9.1",
+    "mongoose": "6.6.0",
+    "nest-graphql-scalar-adapter": "^1.1.2",
+    "pluralize": "^8.0.0",
+    "prettier": "2.7.1",
+    "reflect-metadata": "^0.1.13",
+    "release-it": "^15.4.1",
+    "rxjs": "^7.5.6",
+    "supertest": "6.2.4",
+    "ts-jest": "29.0.1",
+    "ts-morph": "^16.0.0",
+    "ts-node": "10.9.1",
+    "typescript": "4.8.3",
+    "upper-case-first": "^2.0.2"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -c .commitlintrc.json -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
